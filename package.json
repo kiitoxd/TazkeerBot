@@ -1,0 +1,19 @@
+{
+  "name": "tazkeer-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for prayer reminders, fasting schedules, and Hadiths",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["discord", "bot", "prayer", "islamic"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "node-cron": "^3.0.3",
+    "axios": "^1.6.2",
+    "moment-timezone": "^0.5.43"
+  }
+}
+

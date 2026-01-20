@@ -4,9 +4,9 @@ A Discord bot that reminds users of prayer times, fasting schedules according to
 
 ## Features
 
-- 🕌 **Prayer Time Reminders**: Automatically sends reminders for all five daily prayers
-- 🌙 **Fasting Reminders**: Reminds users when they should be fasting according to Mecca timezone during Ramadan
-- 📖 **Hourly Hadiths**: Shares a beautiful Hadith every hour
+**Prayer Time Reminders**: Automatically sends reminders for all five daily prayers
+ **Fasting Reminders**: Reminds users when they should be fasting according to Mecca timezone during Ramadan
+ **Hourly Hadiths**: Shares a beautiful Hadith every hour
 
 ## Setup
 

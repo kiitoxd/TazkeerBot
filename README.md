@@ -1,9 +1,14 @@
-# Tazkeer Discord Bot
+1. Install Dependencies
+**npm install
+**
+2. Configure the bot
+Open the config.json file and fill in your specific details:
 
-A Discord bot that reminds users of prayer times, fasting schedules according to Mecca timezone, and shares Hadiths every hour.
+bot token: Your unique bot token from the Developer Portal.
 
-## Features
+Channel ID: The ID of the channel where reminders will be posted.
 
+<<<<<<< HEAD
 - Prayer Time Reminders: Automatically sends reminders for all five daily prayers
 - Fasting Reminders: Reminds users when they should be fasting according to Mecca timezone during Ramadan
 - Hourly Hadiths: Shares a beautiful Hadith every hour
@@ -64,3 +69,12 @@ npm start
 - Hadiths are stored in `hadiths.json` and can be customized
 - Adhkar (supplications) are stored in `adhkar.json` with Arabic text, English translations, and references
 - Prayer time reminders automatically mention the @Tazkeer role (configurable in config.json)
+=======
+Note: The bot uses the free Aladhan API, so a prayerApiKey is not required
+
+3. Launch the Bot
+Start the bot using the pre-configured start script:
+
+Bash
+**npm start**
+>>>>>>> e30269afa6b70e32b95e77b189344c3440a73704

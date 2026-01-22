@@ -1,83 +1,625 @@
 [
   {
     "text": "The best of people are those who are most beneficial to others.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "خير الناس أنفعهم للناس",
+    "narrator": "Narrated by Jabir ibn Abdullah",
+    "reference": "Sahih al-Jami'",
+    "source": "https://sunnah.com/jami"
   },
   {
     "text": "None of you truly believes until he loves for his brother what he loves for himself.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sahih al-Bukhari 13, Sahih Muslim 45",
+    "source": "https://sunnah.com/bukhari:13"
   },
   {
     "text": "The strong is not the one who overcomes the people by his strength, but the strong is the one who controls himself while in anger.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "ليس الشديد بالصرعة، إنما الشديد الذي يملك نفسه عند الغضب",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 6114, Sahih Muslim 2609",
+    "source": "https://sunnah.com/bukhari:6114"
   },
   {
     "text": "A Muslim is the one who avoids harming Muslims with his tongue and hands.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "المسلم من سلم المسلمون من لسانه ويده",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sahih al-Bukhari 10, Sahih Muslim 40",
+    "source": "https://sunnah.com/bukhari:10"
   },
   {
     "text": "The best charity is that given in Ramadan.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "أفضل الصدقة صدقة في رمضان",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sunan al-Tirmidhi 663",
+    "source": "https://sunnah.com/tirmidhi:663"
   },
   {
     "text": "Whoever fasts Ramadan out of faith and in the hope of reward, his previous sins will be forgiven.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "من صام رمضان إيمانا واحتسابا غفر له ما تقدم من ذنبه",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 38, Sahih Muslim 760",
+    "source": "https://sunnah.com/bukhari:38"
   },
   {
     "text": "When Ramadan begins, the gates of Paradise are opened.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "إذا جاء رمضان فتحت أبواب الجنة",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 1899, Sahih Muslim 1079",
+    "source": "https://sunnah.com/bukhari:1899"
   },
   {
     "text": "The most beloved of people to Allah are those who are most beneficial to people.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "أحب الناس إلى الله أنفعهم للناس",
+    "narrator": "Narrated by Jabir ibn Abdullah",
+    "reference": "Sahih al-Jami'",
+    "source": "https://sunnah.com/jami"
   },
   {
     "text": "Do not be people without minds of your own, saying that if others treat you well you will treat them well, and that if they do wrong you will do wrong. Instead, accustom yourselves to do good if people do good and not to do wrong if they do evil.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "لا تكونوا إمعة، تقولون: إن أحسن الناس أحسنا، وإن ظلموا ظلمنا، ولكن وطنوا أنفسكم إن أحسن الناس أن تحسنوا، وإن أساءوا فلا تظلموا",
+    "narrator": "Narrated by Hudhaifa",
+    "reference": "Sunan al-Tirmidhi 2007",
+    "source": "https://sunnah.com/tirmidhi:2007"
   },
   {
     "text": "The best of you are those who are best to their families, and I am the best of you to my family.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "خيركم خيركم لأهله، وأنا خيركم لأهلي",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 3895",
+    "source": "https://sunnah.com/tirmidhi:3895"
   },
   {
     "text": "Allah is more pleased with the repentance of His servant than one of you is pleased with finding his camel that he had lost in the desert.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "لله أفرح بتوبة عبده من أحدكم سقاه راحلته في أرض فلاة",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sahih al-Bukhari 6309, Sahih Muslim 2747",
+    "source": "https://sunnah.com/bukhari:6309"
   },
   {
     "text": "The best of you are those who learn the Quran and teach it.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "خيركم من تعلم القرآن وعلمه",
+    "narrator": "Narrated by Uthman ibn Affan",
+    "reference": "Sahih al-Bukhari 5027, Sahih Muslim 815",
+    "source": "https://sunnah.com/bukhari:5027"
   },
   {
     "text": "Whoever believes in Allah and the Last Day should speak good or remain silent.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "من كان يؤمن بالله واليوم الآخر فليقل خيرا أو ليصمت",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 6018, Sahih Muslim 47",
+    "source": "https://sunnah.com/bukhari:6018"
   },
   {
     "text": "The most perfect believer in faith is the one whose character is finest and who is kindest to his wife.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "أكمل المؤمنين إيمانا أحسنهم خلقا، وألطفهم بأهله",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 1162",
+    "source": "https://sunnah.com/tirmidhi:1162"
   },
   {
     "text": "The best of you are those who have the best character.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "خياركم أحاسنكم أخلاقا",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sahih al-Bukhari 3559, Sahih Muslim 2321",
+    "source": "https://sunnah.com/bukhari:3559"
   },
   {
     "text": "Paradise is under the feet of mothers.",
-    "narrator": "Prophet Muhammad (PBUH)"
-  },
-  {
-    "text": "The best of you is he who is best to his family, and I am the best among you to my family.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "الجنة تحت أقدام الأمهات",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sunan al-Nasa'i 3104",
+    "source": "https://sunnah.com/nasai:3104"
   },
   {
     "text": "Whoever does not show mercy to others will not be shown mercy.",
-    "narrator": "Prophet Muhammad (PBUH)"
-  },
-  {
-    "text": "The best of you are those who are best to their wives.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "من لا يرحم الناس لا يرحمه الله",
+    "narrator": "Narrated by Jarir ibn Abdullah",
+    "reference": "Sahih al-Bukhari 7376, Sahih Muslim 2319",
+    "source": "https://sunnah.com/bukhari:7376"
   },
   {
     "text": "The most beloved deed to Allah is the most regular and constant even if it were little.",
-    "narrator": "Prophet Muhammad (PBUH)"
+    "arabic": "أحب الأعمال إلى الله أدومها وإن قل",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sahih al-Bukhari 6464, Sahih Muslim 782",
+    "source": "https://sunnah.com/bukhari:6464"
+  },
+  {
+    "text": "Actions are but by intention, and every man shall have only that which he intended.",
+    "arabic": "إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى",
+    "narrator": "Narrated by Umar ibn al-Khattab",
+    "reference": "Sahih al-Bukhari 1, Sahih Muslim 1907",
+    "source": "https://sunnah.com/bukhari:1"
+  },
+  {
+    "text": "The religion is easy, and whoever overburdens himself in his religion will not be able to continue in that way. So you should not be extremists, but try to be near to perfection and receive the good tidings that you will be rewarded.",
+    "arabic": "إن الدين يسر، ولن يشاد الدين أحد إلا غلبه، فسددوا وقاربوا وأبشروا",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 39, Sahih Muslim 2816",
+    "source": "https://sunnah.com/bukhari:39"
+  },
+  {
+    "text": "The example of the five prayers is like that of a clear-water river running by the gate of one of you in which he washes five times a day.",
+    "arabic": "مثل الصلوات الخمس كمثل نهر جار غمر على باب أحدكم يغتسل منه كل يوم خمس مرات",
+    "narrator": "Narrated by Jabir ibn Abdullah",
+    "reference": "Sahih Muslim 668",
+    "source": "https://sunnah.com/muslim:668"
+  },
+  {
+    "text": "The most beloved of places to Allah are the mosques, and the most hated of places to Allah are the markets.",
+    "arabic": "أحب البلاد إلى الله مساجدها، وأبغض البلاد إلى الله أسواقها",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 671",
+    "source": "https://sunnah.com/muslim:671"
+  },
+  {
+    "text": "Whoever builds a mosque for Allah, Allah will build for him a house in Paradise.",
+    "arabic": "من بنى مسجدا لله بنى الله له بيتا في الجنة",
+    "narrator": "Narrated by Uthman ibn Affan",
+    "reference": "Sahih al-Bukhari 450, Sahih Muslim 533",
+    "source": "https://sunnah.com/bukhari:450"
+  },
+  {
+    "text": "The best prayer after the obligatory prayer is the night prayer.",
+    "arabic": "أفضل الصلاة بعد الفريضة صلاة الليل",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 1163",
+    "source": "https://sunnah.com/muslim:1163"
+  },
+  {
+    "text": "Whoever recites a letter from the Book of Allah will have a reward, and that reward will be multiplied by ten.",
+    "arabic": "من قرأ حرفا من كتاب الله فله به حسنة، والحسنة بعشر أمثالها",
+    "narrator": "Narrated by Abdullah ibn Mas'ud",
+    "reference": "Sunan al-Tirmidhi 2910",
+    "source": "https://sunnah.com/tirmidhi:2910"
+  },
+  {
+    "text": "The best remembrance is: 'There is no god but Allah' and the best supplication is: 'Praise be to Allah.'",
+    "arabic": "أفضل الذكر لا إله إلا الله، وأفضل الدعاء الحمد لله",
+    "narrator": "Narrated by Jabir ibn Abdullah",
+    "reference": "Sunan al-Tirmidhi 3383",
+    "source": "https://sunnah.com/tirmidhi:3383"
+  },
+  {
+    "text": "Whoever says 'Subhan Allah wa bihamdihi' (Glory be to Allah and praise be to Him) one hundred times a day will have his sins forgiven even if they were as much as the foam of the sea.",
+    "arabic": "من قال سبحان الله وبحمده مائة مرة حطت خطاياه وإن كانت مثل زبد البحر",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 6405, Sahih Muslim 2691",
+    "source": "https://sunnah.com/bukhari:6405"
+  },
+  {
+    "text": "The best of you is he who is best to his family, and I am the best among you to my family.",
+    "arabic": "خيركم خيركم لأهله، وأنا خيركم لأهلي",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 3895",
+    "source": "https://sunnah.com/tirmidhi:3895"
+  },
+  {
+    "text": "A man's spending on his family is charity.",
+    "arabic": "دينار أنفقته على أهلك صدقة",
+    "narrator": "Narrated by Abu Mas'ud al-Ansari",
+    "reference": "Sahih Muslim 1002",
+    "source": "https://sunnah.com/muslim:1002"
+  },
+  {
+    "text": "The best of you are those who are best to their wives.",
+    "arabic": "خيركم خيركم لنسائه",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 1162",
+    "source": "https://sunnah.com/tirmidhi:1162"
+  },
+  {
+    "text": "Whoever is kind, Allah will be kind to him; therefore be kind to man on the earth. He Who is in heaven will show mercy on you.",
+    "arabic": "من لا يرحم لا يرحم، ارحموا من في الأرض يرحمكم من في السماء",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sunan al-Tirmidhi 1924",
+    "source": "https://sunnah.com/tirmidhi:1924"
+  },
+  {
+    "text": "The believer does not slander, curse, or speak in an obscene or foul manner.",
+    "arabic": "المؤمن لا يطعن ولا يلعن ولا يفجر ولا يبذئ",
+    "narrator": "Narrated by Abdullah ibn Mas'ud",
+    "reference": "Sunan al-Tirmidhi 1977",
+    "source": "https://sunnah.com/tirmidhi:1977"
+  },
+  {
+    "text": "A Muslim is a brother of another Muslim, so he should not oppress him, nor should he hand him over to an oppressor.",
+    "arabic": "المسلم أخو المسلم، لا يظلمه ولا يسلمه",
+    "narrator": "Narrated by Abdullah ibn Umar",
+    "reference": "Sahih al-Bukhari 2442, Sahih Muslim 2580",
+    "source": "https://sunnah.com/bukhari:2442"
+  },
+  {
+    "text": "Help your brother whether he is an oppressor or an oppressed one. People asked: 'O Allah's Messenger! It is all right to help him if he is oppressed, but how should we help him if he is an oppressor?' The Prophet said: 'By preventing him from oppressing others.'",
+    "arabic": "انصر أخاك ظالما أو مظلوما. قالوا: يا رسول الله، هذا ننصره مظلوما، فكيف ننصره ظالما؟ قال: تمنعه من الظلم",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sahih al-Bukhari 2443, Sahih Muslim 2584",
+    "source": "https://sunnah.com/bukhari:2443"
+  },
+  {
+    "text": "Whoever removes a worldly grief from a believer, Allah will remove from him one of the griefs of the Day of Resurrection.",
+    "arabic": "من نفس عن مؤمن كربة من كرب الدنيا نفس الله عنه كربة من كرب يوم القيامة",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 2699",
+    "source": "https://sunnah.com/muslim:2699"
+  },
+  {
+    "text": "The most beloved of people to me is Aisha, and from the men, Abu Bakr.",
+    "arabic": "أحب الناس إلي عائشة، ومن الرجال أبو بكر",
+    "narrator": "Narrated by Amr ibn al-As",
+    "reference": "Sahih al-Bukhari 3662, Sahih Muslim 2384",
+    "source": "https://sunnah.com/bukhari:3662"
+  },
+  {
+    "text": "The most beloved of deeds to Allah are the most regular and constant even if they are little.",
+    "arabic": "أحب الأعمال إلى الله أدومها وإن قل",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sahih al-Bukhari 6464, Sahih Muslim 782",
+    "source": "https://sunnah.com/bukhari:6464"
+  },
+  {
+    "text": "The best of you are those who feed others.",
+    "arabic": "خياركم من أطعم الطعام",
+    "narrator": "Narrated by Abdullah ibn Umar",
+    "reference": "Sahih al-Bukhari 3369",
+    "source": "https://sunnah.com/bukhari:3369"
+  },
+  {
+    "text": "Whoever is not grateful to people is not grateful to Allah.",
+    "arabic": "من لا يشكر الناس لا يشكر الله",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sunan al-Tirmidhi 1954",
+    "source": "https://sunnah.com/tirmidhi:1954"
+  },
+  {
+    "text": "The best of you is he from whom good is expected and from whom evil is safe.",
+    "arabic": "خيركم من يرجى خيره ويؤمن شره",
+    "narrator": "Narrated by Abdullah ibn Umar",
+    "reference": "Sunan al-Tirmidhi 2263",
+    "source": "https://sunnah.com/tirmidhi:2263"
+  },
+  {
+    "text": "The best of you in Islam are those with the best character, if they have religious understanding.",
+    "arabic": "خياركم في الإسلام أحاسنكم أخلاقا إذا فقهوا",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sahih al-Bukhari 6035",
+    "source": "https://sunnah.com/bukhari:6035"
+  },
+  {
+    "text": "The most perfect believer in faith is the one who is best in character and kindest to his wife.",
+    "arabic": "أكمل المؤمنين إيمانا أحسنهم خلقا، وألطفهم بأهله",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 1162",
+    "source": "https://sunnah.com/tirmidhi:1162"
+  },
+  {
+    "text": "Whoever does not show mercy to our young ones, or acknowledge the rights of our elders, is not one of us.",
+    "arabic": "من لا يرحم صغيرنا ولا يعرف حق كبيرنا فليس منا",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sunan al-Tirmidhi 1921",
+    "source": "https://sunnah.com/tirmidhi:1921"
+  },
+  {
+    "text": "The best of you are those who are best to their families, and I am the best of you to my family.",
+    "arabic": "خيركم خيركم لأهله، وأنا خيركم لأهلي",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 3895",
+    "source": "https://sunnah.com/tirmidhi:3895"
+  },
+  {
+    "text": "Whoever has three daughters and is patient with them, feeds them, and clothes them from his wealth, they will be a shield for him from the Fire.",
+    "arabic": "من كان له ثلاث بنات فصبر عليهن وأطعمهن وسقاهن وكساهن من جدته كن له حجابا من النار",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sunan Ibn Majah 3669",
+    "source": "https://sunnah.com/ibnmajah:3669"
+  },
+  {
+    "text": "The best charity is that given when one is healthy and greedy, hoping to become rich and fearing poverty.",
+    "arabic": "أفضل الصدقة أن تصدق وأنت صحيح شحيح تأمل الغنى وتخشى الفقر",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 1419, Sahih Muslim 1032",
+    "source": "https://sunnah.com/bukhari:1419"
+  },
+  {
+    "text": "Whoever gives charity equal to a date from good earnings - for Allah does not accept anything but that which is good - Allah will take it in His right hand and tend it for the one who gave it as any one of you tends his foal, until it becomes like a mountain.",
+    "arabic": "من تصدق بعدل تمرة من كسب طيب - ولا يقبل الله إلا الطيب - فإن الله يأخذها بيمينه فيربيها لصاحبها كما يربي أحدكم فلوه حتى تكون مثل الجبل",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 1410, Sahih Muslim 1014",
+    "source": "https://sunnah.com/bukhari:1410"
+  },
+  {
+    "text": "The upper hand is better than the lower hand. The upper hand is the one that gives, and the lower hand is the one that receives.",
+    "arabic": "اليد العليا خير من اليد السفلى، واليد العليا هي المنفقة، واليد السفلى هي السائلة",
+    "narrator": "Narrated by Hakim ibn Hizam",
+    "reference": "Sahih al-Bukhari 1429, Sahih Muslim 1033",
+    "source": "https://sunnah.com/bukhari:1429"
+  },
+  {
+    "text": "Whoever guides someone to goodness will have a reward like one who did it.",
+    "arabic": "من دل على خير فله مثل أجر فاعله",
+    "narrator": "Narrated by Abu Mas'ud al-Ansari",
+    "reference": "Sahih Muslim 1893",
+    "source": "https://sunnah.com/muslim:1893"
+  },
+  {
+    "text": "Whoever calls others to guidance will have a reward equal to the reward of those who follow him, without their rewards being diminished in any way.",
+    "arabic": "من دعا إلى هدى كان له من الأجر مثل أجور من تبعه لا ينقص ذلك من أجورهم شيئا",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 2674",
+    "source": "https://sunnah.com/muslim:2674"
+  },
+  {
+    "text": "The best of you are those who are best to their neighbors.",
+    "arabic": "خير الأصحاب عند الله خيرهم لصاحبه، وخير الجيران عند الله خيرهم لجاره",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sunan al-Tirmidhi 1944",
+    "source": "https://sunnah.com/tirmidhi:1944"
+  },
+  {
+    "text": "Whoever believes in Allah and the Last Day, let him honor his guest.",
+    "arabic": "من كان يؤمن بالله واليوم الآخر فليكرم ضيفه",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 6018, Sahih Muslim 47",
+    "source": "https://sunnah.com/bukhari:6018"
+  },
+  {
+    "text": "The best of you are those who are best to their neighbors, and I am the best of you to my neighbors.",
+    "arabic": "خير الأصحاب عند الله خيرهم لصاحبه، وخير الجيران عند الله خيرهم لجاره، وأنا خير جار",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 1944",
+    "source": "https://sunnah.com/tirmidhi:1944"
+  },
+  {
+    "text": "Whoever visits a sick person or visits a brother in Allah, a caller calls out: 'May you be blessed, and may your walking be blessed, and may you occupy a dignified position in Paradise.'",
+    "arabic": "من عاد مريضا أو زار أخا له في الله ناداه مناد: أن طبت وطاب ممشاك وتبوأت من الجنة منزلا",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sunan al-Tirmidhi 2008",
+    "source": "https://sunnah.com/tirmidhi:2008"
+  },
+  {
+    "text": "Whoever removes a worldly grief from a believer, Allah will remove from him one of the griefs of the Day of Resurrection. And whoever makes things easy for a person in difficulty, Allah will make things easy for him in this world and the next.",
+    "arabic": "من نفس عن مؤمن كربة من كرب الدنيا نفس الله عنه كربة من كرب يوم القيامة، ومن يسر على معسر يسر الله عليه في الدنيا والآخرة",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 2699",
+    "source": "https://sunnah.com/muslim:2699"
+  },
+  {
+    "text": "The world is the prison of the believer and the paradise of the disbeliever.",
+    "arabic": "الدُّنْيَا سِجْنُ الْمُؤْمِنِ وَجَنَّةُ الْكَافِرِ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 2956",
+    "source": "https://sunnah.com/muslim:2956"
+  },
+  {
+    "text": "Whoever among you sees an evil, let him change it with his hand; if he cannot, then with his tongue; if he cannot, then with his heart, and that is the weakest of faith.",
+    "arabic": "مَنْ رَأَى مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِلِسَانِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ، وَذَلِكَ أَضْعَفُ الْإِيمَانِ",
+    "narrator": "Narrated by Abu Sa'id al-Khudri",
+    "reference": "Sahih Muslim 49",
+    "source": "https://sunnah.com/muslim:49"
+  },
+  {
+    "text": "The example of a believer who recites the Quran is like a citron, which tastes good and smells good. And the example of a believer who does not recite the Quran is like a date, which tastes good but has no smell.",
+    "arabic": "مَثَلُ الْمُؤْمِنِ الَّذِي يَقْرَأُ الْقُرْآنَ كَمَثَلِ الْأُتْرُجَّةِ، رِيحُهَا طَيِّبٌ وَطَعْمُهَا طَيِّبٌ، وَمَثَلُ الْمُؤْمِنِ الَّذِي لَا يَقْرَأُ الْقُرْآنَ كَمَثَلِ التَّمْرَةِ، لَا رِيحَ لَهَا وَطَعْمُهَا حُلْوٌ",
+    "narrator": "Narrated by Abu Musa al-Ash'ari",
+    "reference": "Sahih al-Bukhari 5020, Sahih Muslim 797",
+    "source": "https://sunnah.com/bukhari:5020"
+  },
+  {
+    "text": "The example of guidance and knowledge with which Allah has sent me is like abundant rain falling on the earth, some of which was fertile soil that absorbed rain water and brought forth vegetation and grass in abundance.",
+    "arabic": "مَثَلُ مَا بَعَثَنِي اللَّهُ بِهِ مِنَ الْهُدَى وَالْعِلْمِ كَمَثَلِ الْغَيْثِ الْكَثِيرِ أَصَابَ أَرْضًا، فَكَانَ مِنْهَا نَقِيَّةٌ قَبِلَتِ الْمَاءَ فَأَنْبَتَتِ الْكَلَأَ وَالْعُشْبَ الْكَثِيرَ",
+    "narrator": "Narrated by Abu Musa al-Ash'ari",
+    "reference": "Sahih al-Bukhari 79, Sahih Muslim 2282",
+    "source": "https://sunnah.com/bukhari:79"
+  },
+  {
+    "text": "Whoever travels a path in search of knowledge, Allah will make easy for him a path to Paradise.",
+    "arabic": "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 2699",
+    "source": "https://sunnah.com/muslim:2699"
+  },
+  {
+    "text": "The seeking of knowledge is obligatory for every Muslim.",
+    "arabic": "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sunan Ibn Majah 224",
+    "source": "https://sunnah.com/ibnmajah:224"
+  },
+  {
+    "text": "Whoever cheats us is not one of us.",
+    "arabic": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 101",
+    "source": "https://sunnah.com/muslim:101"
+  },
+  {
+    "text": "The believer is not stung twice from the same hole.",
+    "arabic": "لَا يُلْدَغُ الْمُؤْمِنُ مِنْ جُحْرٍ وَاحِدٍ مَرَّتَيْنِ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 6133, Sahih Muslim 2998",
+    "source": "https://sunnah.com/bukhari:6133"
+  },
+  {
+    "text": "The example of the five prayers is like that of a flowing river at the door of one of you in which he washes five times a day.",
+    "arabic": "مَثَلُ الصَّلَوَاتِ الْخَمْسِ كَمَثَلِ نَهْرٍ جَارٍ غَمْرٍ عَلَى بَابِ أَحَدِكُمْ يَغْتَسِلُ مِنْهُ كُلَّ يَوْمٍ خَمْسَ مَرَّاتٍ",
+    "narrator": "Narrated by Jabir ibn Abdullah",
+    "reference": "Sahih Muslim 668",
+    "source": "https://sunnah.com/muslim:668"
+  },
+  {
+    "text": "The first thing for which a person will be brought to account on the Day of Resurrection will be his prayer. If it is good, he will have succeeded and prosper, and if it is bad, he will have failed and lost.",
+    "arabic": "إِنَّ أَوَّلَ مَا يُحَاسَبُ بِهِ الْعَبْدُ يَوْمَ الْقِيَامَةِ مِنْ عَمَلِهِ صَلَاتُهُ، فَإِنْ صَلَحَتْ فَقَدْ أَفْلَحَ وَأَنْجَحَ، وَإِنْ فَسَدَتْ فَقَدْ خَابَ وَخَسِرَ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sunan al-Tirmidhi 413",
+    "source": "https://sunnah.com/tirmidhi:413"
+  },
+  {
+    "text": "The most beloved of deeds to Allah are those that are done consistently, even if they are small.",
+    "arabic": "أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sahih al-Bukhari 6464, Sahih Muslim 782",
+    "source": "https://sunnah.com/bukhari:6464"
+  },
+  {
+    "text": "Do not be envious of one another, do not hate one another, do not turn away from one another, and be, O servants of Allah, brothers.",
+    "arabic": "لَا تَحَاسَدُوا، وَلَا تَنَاجَشُوا، وَلَا تَبَاغَضُوا، وَلَا تَدَابَرُوا، وَكُونُوا عِبَادَ اللَّهِ إِخْوَانًا",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sahih al-Bukhari 6065, Sahih Muslim 2559",
+    "source": "https://sunnah.com/bukhari:6065"
+  },
+  {
+    "text": "The most excellent jihad is the conquest of self.",
+    "arabic": "أَفْضَلُ الْجِهَادِ أَنْ يُجَاهِدَ الرَّجُلُ نَفْسَهُ",
+    "narrator": "Narrated by Jabir ibn Abdullah",
+    "reference": "Sunan al-Tirmidhi 1671",
+    "source": "https://sunnah.com/tirmidhi:1671"
+  },
+  {
+    "text": "The best of you are those who are best to their parents.",
+    "arabic": "خَيْرُكُمْ خَيْرُكُمْ لِوَالِدَيْهِ",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sunan al-Tirmidhi 1899",
+    "source": "https://sunnah.com/tirmidhi:1899"
+  },
+  {
+    "text": "Paradise lies under the feet of mothers.",
+    "arabic": "الْجَنَّةُ تَحْتَ أَقْدَامِ الْأُمَّهَاتِ",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sunan al-Nasa'i 3104",
+    "source": "https://sunnah.com/nasai:3104"
+  },
+  {
+    "text": "The best of you is he who is best to his family, and I am the best among you to my family.",
+    "arabic": "خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ، وَأَنَا خَيْرُكُمْ لِأَهْلِي",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 3895",
+    "source": "https://sunnah.com/tirmidhi:3895"
+  },
+  {
+    "text": "Whoever is kind, Allah will be kind to him; therefore be kind to man on earth. He Who is in heaven will show mercy on you.",
+    "arabic": "مَنْ لَا يَرْحَمُ لَا يُرْحَمُ، ارْحَمُوا مَنْ فِي الْأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sunan al-Tirmidhi 1924",
+    "source": "https://sunnah.com/tirmidhi:1924"
+  },
+  {
+    "text": "The believer does not slander, curse, or speak in an obscene or foul manner.",
+    "arabic": "الْمُؤْمِنُ لَا يَلْعَنُ وَلَا يَطْعَنُ وَلَا يَفْجُرُ وَلَا يَبْذُو",
+    "narrator": "Narrated by Abdullah ibn Mas'ud",
+    "reference": "Sunan al-Tirmidhi 1977",
+    "source": "https://sunnah.com/tirmidhi:1977"
+  },
+  {
+    "text": "A Muslim is a brother of another Muslim, so he should not oppress him, nor should he hand him over to an oppressor.",
+    "arabic": "الْمُسْلِمُ أَخُو الْمُسْلِمِ، لَا يَظْلِمُهُ وَلَا يُسْلِمُهُ",
+    "narrator": "Narrated by Abdullah ibn Umar",
+    "reference": "Sahih al-Bukhari 2442, Sahih Muslim 2580",
+    "source": "https://sunnah.com/bukhari:2442"
+  },
+  {
+    "text": "Help your brother whether he is an oppressor or an oppressed one. People asked: 'O Allah's Messenger! It is all right to help him if he is oppressed, but how should we help him if he is an oppressor?' The Prophet said: 'By preventing him from oppressing others.'",
+    "arabic": "انْصُرْ أَخَاكَ ظَالِمًا أَوْ مَظْلُومًا. قَالُوا: يَا رَسُولَ اللَّهِ، هَذَا نَنْصُرُهُ مَظْلُومًا، فَكَيْفَ نَنْصُرُهُ ظَالِمًا؟ قَالَ: تَمْنَعُهُ مِنَ الظُّلْمِ",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sahih al-Bukhari 2443, Sahih Muslim 2584",
+    "source": "https://sunnah.com/bukhari:2443"
+  },
+  {
+    "text": "Whoever removes a worldly grief from a believer, Allah will remove from him one of the griefs of the Day of Resurrection.",
+    "arabic": "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 2699",
+    "source": "https://sunnah.com/muslim:2699"
+  },
+  {
+    "text": "The most beloved of people to me is Aisha, and from the men, Abu Bakr.",
+    "arabic": "أَحَبُّ النَّاسِ إِلَيَّ عَائِشَةُ، وَمِنَ الرِّجَالِ أَبُو بَكْرٍ",
+    "narrator": "Narrated by Amr ibn al-As",
+    "reference": "Sahih al-Bukhari 3662, Sahih Muslim 2384",
+    "source": "https://sunnah.com/bukhari:3662"
+  },
+  {
+    "text": "The best of you are those who feed others.",
+    "arabic": "خَيْرُكُمْ مَنْ أَطْعَمَ الطَّعَامَ",
+    "narrator": "Narrated by Abdullah ibn Umar",
+    "reference": "Sahih al-Bukhari 3369",
+    "source": "https://sunnah.com/bukhari:3369"
+  },
+  {
+    "text": "Whoever is not grateful to people is not grateful to Allah.",
+    "arabic": "مَنْ لَا يَشْكُرُ النَّاسَ لَا يَشْكُرُ اللَّهَ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sunan al-Tirmidhi 1954",
+    "source": "https://sunnah.com/tirmidhi:1954"
+  },
+  {
+    "text": "The best of you is he from whom good is expected and from whom evil is safe.",
+    "arabic": "خَيْرُكُمْ مَنْ يُرْجَى خَيْرُهُ وَيُؤْمَنُ شَرُّهُ",
+    "narrator": "Narrated by Abdullah ibn Umar",
+    "reference": "Sunan al-Tirmidhi 2263",
+    "source": "https://sunnah.com/tirmidhi:2263"
+  },
+  {
+    "text": "The best of you in Islam are those with the best character, if they have religious understanding.",
+    "arabic": "خَيْرُكُمْ فِي الْإِسْلَامِ أَحَاسِنُكُمْ أَخْلَاقًا إِذَا فَقُهُوا",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sahih al-Bukhari 6035",
+    "source": "https://sunnah.com/bukhari:6035"
+  },
+  {
+    "text": "The most perfect believer in faith is the one who is best in character and kindest to his wife.",
+    "arabic": "أَكْمَلُ الْمُؤْمِنِينَ إِيمَانًا أَحْسَنُهُمْ خُلُقًا، وَأَلْطَفُهُمْ بِأَهْلِهِ",
+    "narrator": "Narrated by Aisha",
+    "reference": "Sunan al-Tirmidhi 1162",
+    "source": "https://sunnah.com/tirmidhi:1162"
+  },
+  {
+    "text": "Whoever does not show mercy to our young ones, or acknowledge the rights of our elders, is not one of us.",
+    "arabic": "مَنْ لَا يَرْحَمْ صَغِيرَنَا وَلَا يُعْرِفْ حَقَّ كَبِيرِنَا فَلَيْسَ مِنَّا",
+    "narrator": "Narrated by Abdullah ibn Amr",
+    "reference": "Sunan al-Tirmidhi 1921",
+    "source": "https://sunnah.com/tirmidhi:1921"
+  },
+  {
+    "text": "Whoever has three daughters and is patient with them, feeds them, and clothes them from his wealth, they will be a shield for him from the Fire.",
+    "arabic": "مَنْ كَانَ لَهُ ثَلَاثُ بَنَاتٍ فَصَبَرَ عَلَيْهِنَّ وَأَطْعَمَهُنَّ وَسَقَاهُنَّ وَكَسَاهُنَّ مِنْ جِدَتِهِ كُنَّ لَهُ حِجَابًا مِنَ النَّارِ",
+    "narrator": "Narrated by Anas ibn Malik",
+    "reference": "Sunan Ibn Majah 3669",
+    "source": "https://sunnah.com/ibnmajah:3669"
+  },
+  {
+    "text": "The best charity is that given when one is healthy and greedy, hoping to become rich and fearing poverty.",
+    "arabic": "أَفْضَلُ الصَّدَقَةِ أَنْ تَصَدَّقَ وَأَنْتَ صَحِيحٌ شَحِيحٌ تَأْمُلُ الْغِنَى وَتَخْشَى الْفَقْرَ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 1419, Sahih Muslim 1032",
+    "source": "https://sunnah.com/bukhari:1419"
+  },
+  {
+    "text": "Whoever gives charity equal to a date from good earnings - for Allah does not accept anything but that which is good - Allah will take it in His right hand and tend it for the one who gave it as any one of you tends his foal, until it becomes like a mountain.",
+    "arabic": "مَنْ تَصَدَّقَ بِعَدْلِ تَمْرَةٍ مِنْ كَسْبٍ طَيِّبٍ - وَلَا يَقْبَلُ اللَّهُ إِلَّا الطَّيِّبَ - فَإِنَّ اللَّهَ يَأْخُذُهَا بِيَمِينِهِ فَيُرَبِّيهَا لِصَاحِبِهَا كَمَا يُرَبِّي أَحَدُكُمْ فَلُوَّهُ حَتَّى تَكُونَ مِثْلَ الْجَبَلِ",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih al-Bukhari 1410, Sahih Muslim 1014",
+    "source": "https://sunnah.com/bukhari:1410"
+  },
+  {
+    "text": "The upper hand is better than the lower hand. The upper hand is the one that gives, and the lower hand is the one that receives.",
+    "arabic": "الْيَدُ الْعُلْيَا خَيْرٌ مِنَ الْيَدِ السُّفْلَى، وَالْيَدُ الْعُلْيَا هِيَ الْمُنْفِقَةُ، وَالسُّفْلَى هِيَ السَّائِلَةُ",
+    "narrator": "Narrated by Hakim ibn Hizam",
+    "reference": "Sahih al-Bukhari 1429, Sahih Muslim 1033",
+    "source": "https://sunnah.com/bukhari:1429"
+  },
+  {
+    "text": "Whoever guides someone to goodness will have a reward like one who did it.",
+    "arabic": "مَنْ دَلَّ عَلَى خَيْرٍ فَلَهُ مِثْلُ أَجْرِ فَاعِلِهِ",
+    "narrator": "Narrated by Abu Mas'ud al-Ansari",
+    "reference": "Sahih Muslim 1893",
+    "source": "https://sunnah.com/muslim:1893"
+  },
+  {
+    "text": "Whoever calls others to guidance will have a reward equal to the reward of those who follow him, without their rewards being diminished in any way.",
+    "arabic": "مَنْ دَعَا إِلَى هُدًى كَانَ لَهُ مِنَ الْأَجْرِ مِثْلُ أُجُورِ مَنْ تَبِعَهُ لَا يَنْقُصُ ذَلِكَ مِنْ أُجُورِهِمْ شَيْئًا",
+    "narrator": "Narrated by Abu Huraira",
+    "reference": "Sahih Muslim 2674",
+    "source": "https://sunnah.com/muslim:2674"
   }
 ]
-

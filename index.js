@@ -4,6 +4,7 @@ const axios = require('axios');
 const moment = require('moment-timezone');
 const config = require('./config.json');
 const hadiths = require('./hadiths.json');
+const adhkar = require('./adhkar.json');
 
 const client = new Client({
   intents: [
@@ -86,10 +87,14 @@ function setupPrayerReminders() {
       const channel = client.channels.cache.get(config.channelId);
       if (!channel) return;
       
+      // Get the role to mention
+      const role = channel.guild.roles.cache.find(r => r.name === config.roleName);
+      const roleMention = role ? `<@&${role.id}>` : '';
+      
       const embed = new EmbedBuilder()
         .setColor(0x00AE86)
         .setTitle(`🕌 ${prayer} Prayer Time`)
-        .setDescription(`It's time for ${prayer} prayer. May Allah accept your prayers.`)
+        .setDescription(`${roleMention ? roleMention + ' ' : ''}It's time for ${prayer} prayer. May Allah accept your prayers.`)
         .setTimestamp();
       
       channel.send({ embeds: [embed] });
@@ -116,19 +121,78 @@ function setupFastingReminders() {
   });
 }
 
+function sendHadithEmbed(channel, hadith, title = '📖 Hadith of the Hour') {
+  const embed = new EmbedBuilder()
+    .setColor(0x9B59B6)
+    .setTitle(title)
+    .setDescription(hadith.text)
+    .setTimestamp();
+  
+  if (hadith.arabic) {
+    embed.addFields({ name: 'Arabic | العربية', value: hadith.arabic, inline: false });
+  }
+  
+  if (hadith.narrator) {
+    embed.addFields({ name: 'Narrated by', value: hadith.narrator, inline: true });
+  }
+  
+  if (hadith.reference) {
+    embed.addFields({ name: 'Reference', value: hadith.reference, inline: true });
+  }
+  
+  if (hadith.source) {
+    embed.setURL(hadith.source);
+  }
+  
+  return embed;
+}
+
+function sendAdhkarEmbeds(channel, adhkarList, title, color) {
+  const embeds = [];
+  
+  // Split adhkar into chunks to avoid embed limits (Discord allows max 6000 characters per embed)
+  // We'll send each adhkar as a separate embed or group them
+  adhkarList.forEach((dhikr, index) => {
+    const embed = new EmbedBuilder()
+      .setColor(color)
+      .setTitle(`${title} - ${index + 1}/${adhkarList.length}`)
+      .setDescription(`**${dhikr.english}**`)
+      .addFields({ 
+        name: 'Arabic | العربية', 
+        value: dhikr.arabic, 
+        inline: false 
+      });
+    
+    if (dhikr.repetitions > 1) {
+      embed.addFields({ 
+        name: 'Repetitions', 
+        value: `${dhikr.repetitions} times`, 
+        inline: true 
+      });
+    }
+    
+    if (dhikr.reference) {
+      embed.addFields({ 
+        name: 'Reference', 
+        value: dhikr.reference, 
+        inline: true 
+      });
+    }
+    
+    embed.setTimestamp();
+    embeds.push(embed);
+  });
+  
+  return embeds;
+}
+
 function setupHadiths() {
   cron.schedule('0 * * * *', () => {
     const channel = client.channels.cache.get(config.channelId);
     if (!channel) return;
     
     const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
-    
-    const embed = new EmbedBuilder()
-      .setColor(0x9B59B6)
-      .setTitle('📖 Hadith of the Hour')
-      .setDescription(randomHadith.text)
-      .addFields({ name: 'Narrated by', value: randomHadith.narrator || 'Unknown', inline: true })
-      .setTimestamp();
+    const embed = sendHadithEmbed(channel, randomHadith);
     
     channel.send({ embeds: [embed] });
   });
@@ -171,18 +235,49 @@ client.on('messageCreate', async message => {
       return message.reply('❌ Prayer times are not available at the moment. Please try again later.');
     }
     
+    // Convert prayer times to different timezones
+    const timezones = {
+      'UK (London)': 'Europe/London',
+      'Egypt (Cairo)': 'Africa/Cairo',
+      'USA (New York)': 'America/New_York',
+      'Mecca': config.meccaTimezone
+    };
+    
+    const today = moment().format('YYYY-MM-DD');
     const embed = new EmbedBuilder()
       .setColor(0x00AE86)
       .setTitle('🕌 Today\'s Prayer Times')
-      .setDescription('Prayer schedule for today:')
-      .addFields(
-        Object.keys(prayerTimes).map(prayer => ({
-          name: prayer,
-          value: prayerTimes[prayer],
-          inline: true
-        }))
-      )
+      .setDescription('Prayer schedule for today in different timezones:')
       .setTimestamp();
+    
+    // Add prayer times for each timezone
+    Object.keys(prayerTimes).forEach(prayer => {
+      const meccaTimeStr = prayerTimes[prayer];
+      const [hours, minutes] = meccaTimeStr.split(':').map(Number);
+      
+      // Create moment object in Mecca timezone
+      const prayerTimeMecca = moment.tz(`${today} ${meccaTimeStr}`, 'YYYY-MM-DD HH:mm', config.meccaTimezone);
+      
+      let timezoneValues = '';
+      Object.keys(timezones).forEach(tzName => {
+        const tz = timezones[tzName];
+        const timeInTz = prayerTimeMecca.clone().tz(tz);
+        timezoneValues += `**${tzName}**: ${timeInTz.format('HH:mm')}\n`;
+      });
+      
+      embed.addFields({
+        name: prayer,
+        value: timezoneValues,
+        inline: true
+      });
+    });
+    
+    message.reply({ embeds: [embed] });
+  }
+  
+  if (message.content.toLowerCase() === '!hadith') {
+    const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
+    const embed = sendHadithEmbed(message.channel, randomHadith, '📖 Hadith');
     
     message.reply({ embeds: [embed] });
   }
@@ -199,6 +294,81 @@ client.on('messageCreate', async message => {
         : `You are not required to fast at this moment.`)
       .addFields({ name: 'Current Mecca Time', value: meccaTime.format('MMMM Do YYYY, HH:mm:ss'), inline: false })
       .addFields({ name: 'Is Ramadan?', value: checkRamadan() ? 'Yes' : 'No', inline: true })
+      .setTimestamp();
+    
+    message.reply({ embeds: [embed] });
+  }
+  
+  if (message.content.toLowerCase() === '!azkaralsabah' || message.content.toLowerCase() === '!azkarsabah') {
+    const embeds = sendAdhkarEmbeds(message.channel, adhkar.morning, '🌅 Morning Adhkar (أذكار الصباح)', 0xFFD700);
+    
+    // Send first embed as reply, then send the rest
+    if (embeds.length > 0) {
+      await message.reply({ embeds: [embeds[0]] });
+      
+      // Send remaining embeds (Discord allows up to 10 embeds per message, but we'll send separately for clarity)
+      for (let i = 1; i < embeds.length; i++) {
+        await message.channel.send({ embeds: [embeds[i]] });
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+  }
+  
+  if (message.content.toLowerCase() === '!azkaralmasah' || message.content.toLowerCase() === '!azkarmasah') {
+    const embeds = sendAdhkarEmbeds(message.channel, adhkar.evening, '🌆 Evening Adhkar (أذكار المساء)', 0x4169E1);
+    
+    // Send first embed as reply, then send the rest
+    if (embeds.length > 0) {
+      await message.reply({ embeds: [embeds[0]] });
+      
+      // Send remaining embeds
+      for (let i = 1; i < embeds.length; i++) {
+        await message.channel.send({ embeds: [embeds[i]] });
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+  }
+  
+  if (message.content.toLowerCase() === '!help' || message.content.toLowerCase() === '!commands') {
+    const embed = new EmbedBuilder()
+      .setColor(0x3498DB)
+      .setTitle('Tazkeer Bot Commands')
+      .setDescription('Here are all available commands:')
+      .addFields(
+        { 
+          name: 'Prayer Times', 
+          value: '`!prayertimes`\nShows today\'s prayer schedule in multiple timezones (UK, Egypt, USA, Mecca)', 
+          inline: false 
+        },
+        { 
+          name: 'Fasting Status', 
+          value: '`!fasting`\nShows current fasting status according to Mecca time', 
+          inline: false 
+        },
+        { 
+          name: 'Hadith', 
+          value: '`!hadith`\nGet a random Hadith with Arabic translation and reference', 
+          inline: false 
+        },
+        { 
+          name: 'Morning Adhkar', 
+          value: '`!azkaralsabah` or `!azkarsabah`\nDisplay morning supplications (أذكار الصباح)', 
+          inline: false 
+        },
+        { 
+          name: 'Evening Adhkar', 
+          value: '`!azkaralmasah` or `!azkarmasah`\nDisplay evening supplications (أذكار المساء)', 
+          inline: false 
+        },
+        { 
+          name: 'Help', 
+          value: '`!help` or `!commands`\nShow this help message', 
+          inline: false 
+        }
+      )
+      .setFooter({ text: 'May Allah accept your deeds' })
       .setTimestamp();
     
     message.reply({ embeds: [embed] });

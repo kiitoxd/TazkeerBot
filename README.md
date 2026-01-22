@@ -43,7 +43,7 @@ npm start
 ## Commands
 
 - `!prayertimes` - Shows today's prayer schedule in multiple timezones (UK, Egypt, USA, Mecca)
-- `!fasting` - Shows current fasting status according to Mecca time
+- `!fasting` - Shows Ramadan Fasting start/end time according to Mecca time
 - `!hadith` - Get a random Hadith with Arabic translation and reference
 - `!azkaralsabah` or `!azkarsabah` - Display morning adhkar (أذكار الصباح)
 - `!azkaralmasah` or `!azkarmasah` - Display evening adhkar (أذكار المساء)

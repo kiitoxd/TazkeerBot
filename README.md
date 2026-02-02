@@ -33,7 +33,7 @@ start the bot using the pre-configured start script:
 
 ```bash
 npm start
-or bun start if you're using bun. (recommended)
+or bun start if you're using bun.
 ```
 
 ## Commands

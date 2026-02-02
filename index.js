@@ -2,6 +2,8 @@ const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const cron = require('node-cron');
 const axios = require('axios');
 const moment = require('moment-timezone');
+const fs = require('fs');
+const path = require('path');
 const config = require('./config.json');
 const hadiths = require('./hadiths.json');
 const adhkar = require('./adhkar.json');
@@ -16,6 +18,104 @@ const client = new Client({
 
 let prayerTimes = {};
 const meccaLocation = { lat: 21.4225, lon: 39.8262 };
+const userTimezonesFile = path.join(__dirname, 'userTimezones.json');
+
+// Country to timezone mapping
+const countryToTimezone = {
+  'usa': 'America/New_York',
+  'united states': 'America/New_York',
+  'us': 'America/New_York',
+  'uk': 'Europe/London',
+  'united kingdom': 'Europe/London',
+  'britain': 'Europe/London',
+  'egypt': 'Africa/Cairo',
+  'saudi arabia': 'Asia/Riyadh',
+  'saudi': 'Asia/Riyadh',
+  'uae': 'Asia/Dubai',
+  'united arab emirates': 'Asia/Dubai',
+  'qatar': 'Asia/Qatar',
+  'kuwait': 'Asia/Kuwait',
+  'bahrain': 'Asia/Bahrain',
+  'oman': 'Asia/Muscat',
+  'jordan': 'Asia/Amman',
+  'lebanon': 'Asia/Beirut',
+  'syria': 'Asia/Damascus',
+  'iraq': 'Asia/Baghdad',
+  'yemen': 'Asia/Aden',
+  'palestine': 'Asia/Gaza',
+  'turkey': 'Europe/Istanbul',
+  'pakistan': 'Asia/Karachi',
+  'india': 'Asia/Kolkata',
+  'bangladesh': 'Asia/Dhaka',
+  'indonesia': 'Asia/Jakarta',
+  'malaysia': 'Asia/Kuala_Lumpur',
+  'singapore': 'Asia/Singapore',
+  'philippines': 'Asia/Manila',
+  'thailand': 'Asia/Bangkok',
+  'australia': 'Australia/Sydney',
+  'canada': 'America/Toronto',
+  'france': 'Europe/Paris',
+  'germany': 'Europe/Berlin',
+  'spain': 'Europe/Madrid',
+  'italy': 'Europe/Rome',
+  'netherlands': 'Europe/Amsterdam',
+  'belgium': 'Europe/Brussels',
+  'switzerland': 'Europe/Zurich',
+  'sweden': 'Europe/Stockholm',
+  'norway': 'Europe/Oslo',
+  'denmark': 'Europe/Copenhagen',
+  'poland': 'Europe/Warsaw',
+  'russia': 'Europe/Moscow',
+  'china': 'Asia/Shanghai',
+  'japan': 'Asia/Tokyo',
+  'south korea': 'Asia/Seoul',
+  'brazil': 'America/Sao_Paulo',
+  'argentina': 'America/Argentina/Buenos_Aires',
+  'mexico': 'America/Mexico_City',
+  'south africa': 'Africa/Johannesburg',
+  'nigeria': 'Africa/Lagos',
+  'kenya': 'Africa/Nairobi',
+  'morocco': 'Africa/Casablanca',
+  'tunisia': 'Africa/Tunis',
+  'algeria': 'Africa/Algiers',
+  'libya': 'Africa/Tripoli',
+  'sudan': 'Africa/Khartoum',
+  'ethiopia': 'Africa/Addis_Ababa'
+};
+
+function loadUserTimezones() {
+  try {
+    if (fs.existsSync(userTimezonesFile)) {
+      const data = fs.readFileSync(userTimezonesFile, 'utf8');
+      return JSON.parse(data);
+    }
+  } catch (error) {
+    console.error('Error loading user timezones:', error);
+  }
+  return {};
+}
+
+function saveUserTimezone(userId, timezone) {
+  try {
+    const userTimezones = loadUserTimezones();
+    userTimezones[userId] = timezone;
+    fs.writeFileSync(userTimezonesFile, JSON.stringify(userTimezones, null, 2));
+    return true;
+  } catch (error) {
+    console.error('Error saving user timezone:', error);
+    return false;
+  }
+}
+
+function getUserTimezone(userId) {
+  const userTimezones = loadUserTimezones();
+  return userTimezones[userId] || null;
+}
+
+function getTimezoneFromCountry(country) {
+  const normalizedCountry = country.toLowerCase().trim();
+  return countryToTimezone[normalizedCountry] || null;
+}
 
 async function getPrayerTimes() {
   try {
@@ -49,33 +149,19 @@ function getMeccaTime() {
   return moment().tz(config.meccaTimezone);
 }
 
-function checkRamadan() {
-  const meccaTime = getMeccaTime();
-  const year = meccaTime.year();
-  
-  const ramadanDates = {
-    2024: { start: '2024-03-11', end: '2024-04-09' },
-    2025: { start: '2025-03-01', end: '2025-03-30' },
-    2026: { start: '2026-02-18', end: '2026-03-19' }
-  };
-  
-  if (!ramadanDates[year]) return false;
-  
-  const today = meccaTime.format('YYYY-MM-DD');
-  return today >= ramadanDates[year].start && today <= ramadanDates[year].end;
-}
+// Timezone to language mapping (Arabic-speaking countries)
+const arabicSpeakingTimezones = [
+  'Asia/Riyadh', 'Asia/Dubai', 'Asia/Qatar', 'Asia/Kuwait', 'Asia/Bahrain',
+  'Asia/Muscat', 'Asia/Amman', 'Asia/Beirut', 'Asia/Damascus', 'Asia/Baghdad',
+  'Asia/Aden', 'Asia/Gaza', 'Africa/Cairo', 'Africa/Casablanca', 'Africa/Tunis',
+  'Africa/Algiers', 'Africa/Tripoli', 'Africa/Khartoum', 'Europe/Istanbul'
+];
 
-function isFastingTime() {
-  if (!checkRamadan()) return false;
-  
-  const meccaTime = getMeccaTime();
-  const hour = meccaTime.hour();
-  const minute = meccaTime.minute();
-  
-  if (hour < 4 || (hour === 4 && minute < 30)) return false;
-  if (hour >= 18) return false;
-  
-  return true;
+function getLanguageFromTimezone(timezone) {
+  if (arabicSpeakingTimezones.includes(timezone)) {
+    return 'arabic';
+  }
+  return 'english';
 }
 
 function setupPrayerReminders() {
@@ -102,34 +188,24 @@ function setupPrayerReminders() {
   });
 }
 
-function setupFastingReminders() {
-  cron.schedule('*/30 * * * *', () => {
-    if (!isFastingTime()) return;
-    
-    const channel = client.channels.cache.get(config.channelId);
-    if (!channel) return;
-    
-    const meccaTime = getMeccaTime();
-    const embed = new EmbedBuilder()
-      .setColor(0x2ECC71)
-      .setTitle('🌙 Fasting Reminder')
-      .setDescription(`Remember, you should be fasting now according to Mecca time (${meccaTime.format('HH:mm')}).`)
-      .addFields({ name: 'Current Mecca Time', value: meccaTime.format('MMMM Do YYYY, HH:mm:ss'), inline: false })
-      .setTimestamp();
-    
-    channel.send({ embeds: [embed] });
-  });
-}
 
-function sendHadithEmbed(channel, hadith, title = '📖 Hadith of the Hour') {
+function sendHadithEmbed(channel, hadith, title = '📖 Hadith of the Hour', language = 'english') {
   const embed = new EmbedBuilder()
     .setColor(0x9B59B6)
     .setTitle(title)
-    .setDescription(hadith.text)
     .setTimestamp();
   
-  if (hadith.arabic) {
-    embed.addFields({ name: 'Arabic | العربية', value: hadith.arabic, inline: false });
+  // Display based on language preference
+  if (language === 'arabic' && hadith.arabic) {
+    embed.setDescription(hadith.arabic);
+    if (hadith.text) {
+      embed.addFields({ name: 'English', value: hadith.text, inline: false });
+    }
+  } else {
+    embed.setDescription(hadith.text);
+    if (hadith.arabic) {
+      embed.addFields({ name: 'Arabic | العربية', value: hadith.arabic, inline: false });
+    }
   }
   
   if (hadith.narrator) {
@@ -191,10 +267,58 @@ function setupHadiths() {
     const channel = client.channels.cache.get(config.channelId);
     if (!channel) return;
     
+    // For channel-wide hadiths, use English as default (can be customized)
+    // Or get the most common timezone from users if needed
     const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
-    const embed = sendHadithEmbed(channel, randomHadith);
+    const embed = sendHadithEmbed(channel, randomHadith, '📖 Hadith of the Hour', 'english');
     
     channel.send({ embeds: [embed] });
+  });
+}
+
+async function sendAdhkarReminder(adhkarList, title, color) {
+  const channel = client.channels.cache.get(config.channelId);
+  if (!channel) return;
+  
+  // Get the role to mention
+  const role = channel.guild.roles.cache.find(r => r.name === config.roleName);
+  const roleMention = role ? `<@&${role.id}> ` : '';
+  
+  const embeds = sendAdhkarEmbeds(channel, adhkarList, title, color);
+  
+  if (embeds.length > 0) {
+    // Send first embed with role mention
+    const firstEmbed = embeds[0];
+    firstEmbed.setDescription(`${roleMention}**${adhkarList[0].english}**`);
+    await channel.send({ embeds: [firstEmbed] });
+    
+    // Send remaining embeds with delay to avoid rate limiting
+    for (let i = 1; i < embeds.length; i++) {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await channel.send({ embeds: [embeds[i]] });
+    }
+  }
+}
+
+function setupMorningAdhkar() {
+  if (!prayerTimes.Fajr) return;
+  
+  const fajrTime = prayerTimes.Fajr;
+  const [hours, minutes] = fajrTime.split(':').map(Number);
+  
+  cron.schedule(`${minutes} ${hours} * * *`, async () => {
+    await sendAdhkarReminder(adhkar.morning, 'Morning Adhkar (أذكار الصباح)', 0xFFD700);
+  });
+}
+
+function setupEveningAdhkar() {
+  if (!prayerTimes.Maghrib) return;
+  
+  const maghribTime = prayerTimes.Maghrib;
+  const [hours, minutes] = maghribTime.split(':').map(Number);
+  
+  cron.schedule(`${minutes} ${hours} * * *`, async () => {
+    await sendAdhkarReminder(adhkar.evening, 'Evening Adhkar (أذكار المساء)', 0x4169E1);
   });
 }
 
@@ -203,12 +327,15 @@ client.once('ready', async () => {
   
   await getPrayerTimes();
   setupPrayerReminders();
-  setupFastingReminders();
   setupHadiths();
+  setupMorningAdhkar();
+  setupEveningAdhkar();
   
   cron.schedule('0 0 * * *', async () => {
     await getPrayerTimes();
     setupPrayerReminders();
+    setupMorningAdhkar();
+    setupEveningAdhkar();
   });
 });
 
@@ -235,39 +362,32 @@ client.on('messageCreate', async message => {
       return message.reply('❌ Prayer times are not available at the moment. Please try again later.');
     }
     
-    // Convert prayer times to different timezones
-    const timezones = {
-      'UK (London)': 'Europe/London',
-      'Egypt (Cairo)': 'Africa/Cairo',
-      'USA (New York)': 'America/New_York',
-      'Mecca': config.meccaTimezone
-    };
+    // Get user's timezone
+    const userTimezone = getUserTimezone(message.author.id);
+    if (!userTimezone) {
+      return message.reply('❌ Please set your timezone first using `!timezone <country>`. For example: `!timezone USA` or `!timezone Egypt`');
+    }
     
     const today = moment().format('YYYY-MM-DD');
     const embed = new EmbedBuilder()
       .setColor(0x00AE86)
-      .setTitle('🕌 Today\'s Prayer Times')
-      .setDescription('Prayer schedule for today in different timezones:')
+      .setTitle('Today\'s Prayer Times')
+      .setDescription(`Prayer schedule for today in your timezone (${userTimezone}):`)
       .setTimestamp();
     
-    // Add prayer times for each timezone
+    // Add prayer times for user's timezone
     Object.keys(prayerTimes).forEach(prayer => {
       const meccaTimeStr = prayerTimes[prayer];
-      const [hours, minutes] = meccaTimeStr.split(':').map(Number);
       
       // Create moment object in Mecca timezone
       const prayerTimeMecca = moment.tz(`${today} ${meccaTimeStr}`, 'YYYY-MM-DD HH:mm', config.meccaTimezone);
       
-      let timezoneValues = '';
-      Object.keys(timezones).forEach(tzName => {
-        const tz = timezones[tzName];
-        const timeInTz = prayerTimeMecca.clone().tz(tz);
-        timezoneValues += `**${tzName}**: ${timeInTz.format('HH:mm')}\n`;
-      });
+      // Convert to user's timezone
+      const timeInUserTz = prayerTimeMecca.clone().tz(userTimezone);
       
       embed.addFields({
         name: prayer,
-        value: timezoneValues,
+        value: timeInUserTz.format('HH:mm'),
         inline: true
       });
     });
@@ -275,29 +395,52 @@ client.on('messageCreate', async message => {
     message.reply({ embeds: [embed] });
   }
   
+  if (message.content.toLowerCase().startsWith('!timezone')) {
+    const args = message.content.split(' ').slice(1);
+    
+    if (args.length === 0) {
+      const currentTimezone = getUserTimezone(message.author.id);
+      if (currentTimezone) {
+        return message.reply(`Your current timezone is set to: **${currentTimezone}**\n\nTo change it, use: \`!timezone <country>\`\nExample: \`!timezone USA\` or \`!timezone Egypt\``);
+      } else {
+        return message.reply('You haven\'t set a timezone yet.\n\nUse: `!timezone <country>`\nExample: `!timezone USA` or `!timezone Egypt`');
+      }
+    }
+    
+    const countryInput = args.join(' ');
+    const timezone = getTimezoneFromCountry(countryInput);
+    
+    if (!timezone) {
+      const availableCountries = Object.keys(countryToTimezone).slice(0, 20).join(', ');
+      return message.reply(`❌ Country not found. Please enter a valid country name.\n\nSome examples: USA, UK, Egypt, Saudi Arabia, UAE, Pakistan, India, etc.\n\nAvailable countries include: ${availableCountries}...`);
+    }
+    
+    const success = saveUserTimezone(message.author.id, timezone);
+    if (success) {
+      const embed = new EmbedBuilder()
+        .setColor(0x2ECC71)
+        .setTitle('Timezone Set Successfully')
+        .setDescription(`Your timezone has been set to: **${timezone}**\nCountry: **${countryInput}**`)
+        .setTimestamp();
+      
+      message.reply({ embeds: [embed] });
+    } else {
+      message.reply('❌ Failed to save your timezone. Please try again.');
+    }
+  }
+  
   if (message.content.toLowerCase() === '!hadith') {
     const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
-    const embed = sendHadithEmbed(message.channel, randomHadith, '📖 Hadith');
+    
+    // Get user's timezone and determine language
+    const userTimezone = getUserTimezone(message.author.id);
+    const language = userTimezone ? getLanguageFromTimezone(userTimezone) : 'english';
+    
+    const embed = sendHadithEmbed(message.channel, randomHadith, '📖 Hadith', language);
     
     message.reply({ embeds: [embed] });
   }
   
-  if (message.content.toLowerCase() === '!fasting') {
-    const meccaTime = getMeccaTime();
-    const fasting = isFastingTime();
-    
-    const embed = new EmbedBuilder()
-      .setColor(fasting ? 0x2ECC71 : 0xE74C3C)
-      .setTitle('🌙 Fasting Status')
-      .setDescription(fasting 
-        ? `You should be fasting now according to Mecca time.`
-        : `You are not required to fast at this moment.`)
-      .addFields({ name: 'Current Mecca Time', value: meccaTime.format('MMMM Do YYYY, HH:mm:ss'), inline: false })
-      .addFields({ name: 'Is Ramadan?', value: checkRamadan() ? 'Yes' : 'No', inline: true })
-      .setTimestamp();
-    
-    message.reply({ embeds: [embed] });
-  }
   
   if (message.content.toLowerCase() === '!azkaralsabah' || message.content.toLowerCase() === '!azkarsabah') {
     const embeds = sendAdhkarEmbeds(message.channel, adhkar.morning, '🌅 Morning Adhkar (أذكار الصباح)', 0xFFD700);
@@ -338,18 +481,18 @@ client.on('messageCreate', async message => {
       .setDescription('Here are all available commands:')
       .addFields(
         { 
-          name: 'Prayer Times', 
-          value: '`!prayertimes`\nShows today\'s prayer schedule in multiple timezones (UK, Egypt, USA, Mecca)', 
+          name: 'Timezone', 
+          value: '`!timezone <country>`\nSet your timezone by country name. Example: `!timezone USA` or `!timezone Egypt`', 
           inline: false 
         },
         { 
-          name: 'Fasting Status', 
-          value: '`!fasting`\nShows current fasting status according to Mecca time', 
+          name: 'Prayer Times', 
+          value: '`!prayertimes`\nShows today\'s prayer schedule in your timezone (set with !timezone)', 
           inline: false 
         },
         { 
           name: 'Hadith', 
-          value: '`!hadith`\nGet a random Hadith with Arabic translation and reference', 
+          value: '`!hadith`\nGet a random Hadith in your locale language (Arabic for Arabic-speaking countries, English otherwise)', 
           inline: false 
         },
         { 
